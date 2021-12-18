@@ -5,16 +5,16 @@ use App\FormatInterface;
 
 class FormatFactory 
 {
-    public function getStringFormat(String $string, String $format)
+    public function getStringFormat(String $format)
     {
         if ($format == 'json') {
-            return new JsonFormat($string);
+            return new JsonFormat();
         }
         else if ($format == 'xml') {
-            return new XmlFormat($string);
+            return new XmlFormat();
         }
         else if ($format == 'html') {
-            return new HtmlFormat($string);
+            return new HtmlFormat();
         }
 
         return null;
