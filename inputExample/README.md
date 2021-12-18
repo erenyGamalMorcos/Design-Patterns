@@ -1,0 +1,1 @@
+* This Example mix between factory and startgy to let the user choose the type
