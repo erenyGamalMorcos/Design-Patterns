@@ -4,18 +4,16 @@ namespace App;
 
 class FormatFactory 
 {
+    public static $class_type = [
+        'json' => JsonFormat::class,
+        'xml'  => XmlFormat::class,
+        'html' => HtmlFormat::class,
+
+    ];
     public function getStringFormat(String $format)
     {
-        if ($format == 'json') {
-            return new JsonFormat();
-        }
-        else if ($format == 'xml') {
-            return new XmlFormat();
-        }
-        else if ($format == 'html') {
-            return new HtmlFormat();
-        }
-
-        return null;
+        $object = new self::$class_type[$format];
+        
+        return $object;
     }
 }
